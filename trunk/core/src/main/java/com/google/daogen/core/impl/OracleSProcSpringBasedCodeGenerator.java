@@ -1,14 +1,16 @@
 package com.google.daogen.core.impl;
 
-import com.google.daogen.core.CodeGenerator;
-import com.google.daogen.core.DAOStyle;
-import com.google.daogen.core.DatabaseEntityType;
-import com.google.daogen.core.DatabaseType;
+import com.google.daogen.core.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.Assert;
 
 import javax.sql.DataSource;
 
 public class OracleSProcSpringBasedCodeGenerator implements CodeGenerator{
     private DataSource dataSource;
+
+    private static final Logger logger = LoggerFactory.getLogger(OracleSProcSpringBasedCodeGenerator.class);
 
     public OracleSProcSpringBasedCodeGenerator(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -26,7 +28,8 @@ public class OracleSProcSpringBasedCodeGenerator implements CodeGenerator{
         return DAOStyle.SPRING_SIMPLE;
     }
 
-    public void generateCode() {
+    public void generateCode(EntityDetail entityDetail) {
+        Assert.state(entityDetail instanceof StoredProcedureDetail, "Please pass stored procedure entity detail");
 
     }
 
