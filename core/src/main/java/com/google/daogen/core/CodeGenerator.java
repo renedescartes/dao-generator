@@ -1,6 +1,7 @@
 package com.google.daogen.core;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 public interface CodeGenerator {
 
@@ -10,7 +11,7 @@ public interface CodeGenerator {
 
     DAOStyle getDAOStyle();
 
-    void generateCode(EntityDetail entityDetail);
+    String generateCode(EntityDetail entityDetail) throws SQLException;
 
     DataSource getDataSource();
 }
