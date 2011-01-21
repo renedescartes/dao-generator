@@ -1,3 +1,3 @@
-#entity.simpleJdbcCall
+${entity.simpleJdbcCall}
 
 and kannan
