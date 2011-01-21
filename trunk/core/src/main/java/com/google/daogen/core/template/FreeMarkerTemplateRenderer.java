@@ -12,10 +12,10 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FreeMarketTemplateRenderer implements TemplateRenderer {
+public class FreeMarkerTemplateRenderer implements TemplateRenderer {
     private Configuration configuration;
 
-    public FreeMarketTemplateRenderer(String directoryName) {
+    public FreeMarkerTemplateRenderer() {
         configuration = new Configuration();
         configuration.setClassForTemplateLoading(this.getClass(), "/com/google/daogen/core/template/files");
         configuration.setObjectWrapper(new DefaultObjectWrapper());
