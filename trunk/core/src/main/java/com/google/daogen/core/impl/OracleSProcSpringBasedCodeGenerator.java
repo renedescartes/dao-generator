@@ -2,6 +2,7 @@ package com.google.daogen.core.impl;
 
 import com.google.daogen.core.*;
 import com.google.daogen.core.template.TemplateRenderer;
+import oracle.jdbc.driver.OracleDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.metadata.CallParameterMetaData;
@@ -14,6 +15,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -43,6 +45,7 @@ public class OracleSProcSpringBasedCodeGenerator implements CodeGenerator {
 
     public String generateCode(EntityDetail entityDetail) throws SQLException {
         Assert.state(entityDetail instanceof StoredProcedureDetail, "Please pass stored procedure entity detail");
+        DriverManager.registerDriver(new OracleDriver());
         StoredProcedureDetail detail = (StoredProcedureDetail) entityDetail;
         SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(dataSource).
                 withSchemaName(detail.getSchemaName()).
