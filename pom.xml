@@ -15,6 +15,7 @@
     <properties>
         <junit.dependency.version>4.6</junit.dependency.version>
         <spring.version>2.5.6</spring.version>
+        <slf4j.version>1.5.6</slf4j.version>
     </properties>
 </project>
 
