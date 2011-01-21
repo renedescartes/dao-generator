@@ -17,7 +17,8 @@ public class OracleSProcGenerationTest {
         OracleSProcSpringBasedCodeGenerator generator = new OracleSProcSpringBasedCodeGenerator(dataSource,
                 new FreeMarkerTemplateRenderer());
         try {
-            generator.generateCode(new StoredProcedureDetail("PKG_LOOKUPS_LOCAL", "pr_get_market_type_for_sport", "SOURCE_SPORTEX"));
+            System.out.println(generator.generateCode(new StoredProcedureDetail("PKG_LOOKUPS_LOCAL",
+                    "pr_get_market_type_for_sport", "SOURCE_SPORTEX")));
         } catch (SQLException e) {
             e.printStackTrace();
         }
