@@ -10,7 +10,7 @@ public interface CodeGenerator {
 
     DAOStyle getDAOStyle();
 
-    void generateCode();
+    void generateCode(EntityDetail entityDetail);
 
     DataSource getDataSource();
 }
