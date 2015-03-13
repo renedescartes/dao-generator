@@ -1,0 +1,1 @@
+This project generates DAO access code for Procedures, Tables, other database elements for the MySQL, Oracle databases.
